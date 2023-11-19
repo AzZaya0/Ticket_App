@@ -22,8 +22,6 @@ class FilterTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50.r)),
             ).marginOnly(left: 20.w);
           }),
-    ).marginSymmetric(
-      vertical: 20.h,
-    );
+    ).marginOnly(top: 20.h, bottom: 5.h);
   }
 }

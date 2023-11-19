@@ -11,10 +11,10 @@ class EventTile extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
           itemCount: 5,
+          //  physics: NeverScrollableScrollPhysics(),
           itemBuilder: (cxt, index) {
             return Padding(
-              padding:
-                  EdgeInsets.only(top: 15.0.sp, right: 15.0.sp, left: 15.0.sp),
+              padding: EdgeInsets.only(right: 15.0.w, left: 15.0.w),
               child: Card(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
