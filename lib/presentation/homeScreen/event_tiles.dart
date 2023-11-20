@@ -32,26 +32,27 @@ class EventTile extends StatelessWidget {
                       children: [
                         SizedBox(
                           width: 250.w,
-                          child: customText(
-                              'Code Fest 2022 is happening soon, How to participate?',
+                          child: CustomText(
+                              text:
+                                  'Code Fest 2022 is happening soon, How to participate?',
                               fontSize: 15.sp),
                         ),
                         Row(
                           children: [
                             Icon(Icons.calendar_month),
-                            customText('14 April 2022')
+                            CustomText(text: '14 April 2022')
                           ],
                         ).marginOnly(bottom: 3.h, top: 6.h),
                         Row(
                           children: [
                             Icon(Icons.location_on),
-                            customText('Biratnagar'),
+                            CustomText(text: 'Biratnagar'),
                             Icon(
                               Icons.circle,
                               size: 10,
                             ).marginOnly(left: 20.w, right: 10.w),
                             Icon(Icons.wallet),
-                            customText('Rs. 200').marginSymmetric(
+                            CustomText(text: 'Rs. 200').marginSymmetric(
                               horizontal: 10,
                             )
                           ],

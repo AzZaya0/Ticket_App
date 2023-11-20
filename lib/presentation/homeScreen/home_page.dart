@@ -72,14 +72,17 @@ class HomePage extends StatelessWidget {
                       suffixIcon: Icon(Icons.menu)),
                 ),
               ).marginSymmetric(horizontal: 20.w, vertical: 15.h),
-              customText('Featured Events',
+              CustomText(
+                      text: 'Featured Events',
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0xff4E4E4E))
                   .marginSymmetric(horizontal: 20.w),
               EventSlider(),
-              customText('Explore Events',
-                      fontSize: 20.sp, fontWeight: FontWeight.w700)
+              CustomText(
+                      text: 'Explore Events',
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w700)
                   .marginOnly(
                 left: 20.w,
               ),

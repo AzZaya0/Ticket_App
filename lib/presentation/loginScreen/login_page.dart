@@ -17,29 +17,28 @@ class LoginPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Center(
-                child: MyTextfield(
-                  'Username',
-                  false,
+                child: MyTextField(
+                  name: 'Username',
+                  obscureText: false,
                   icon: Icons.person,
                   keyboardType: TextInputType.emailAddress,
                 ).marginOnly(bottom: 20.h),
               ),
               Center(
-                child: MyTextfield(
-                    lasticon: Icons.visibility,
-                    'Password',
-                    true,
+                child: MyTextField(
+                    lastIcon: Icons.visibility,
+                    name: 'Password',
+                    obscureText: true,
                     icon: Icons.lock,
                     onPressed: () {}),
               ),
-              customText('ForgotPassword?'),
+              CustomText(text: 'ForgotPassword?'),
               Center(
                 child: CustomButton(
                   text: 'Login',
                   onTap: () {},
                   height: 50.h,
                   width: 300.h,
-                  
                   top: 50.h,
                 ),
               )
