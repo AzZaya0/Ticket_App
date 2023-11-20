@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:ticket_now/widgets/custom_button.dart';
 import 'package:ticket_now/widgets/custom_textField.dart';
 
 class LoginPage extends StatelessWidget {
@@ -22,7 +23,8 @@ class LoginPage extends StatelessWidget {
               'Password',
               true,
               icon: Icons.lock,
-              onPressed: () {})
+              onPressed: () {}),
+          CustomButton(onTap: () {}, height: 50.h, width: 200.h)
         ]).marginOnly(left: 20.w, right: 20.w),
       ),
     );
