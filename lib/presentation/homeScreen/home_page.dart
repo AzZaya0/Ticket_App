@@ -7,54 +7,52 @@ import 'package:ticket_now/presentation/homeScreen/custom_slider.dart';
 import 'package:ticket_now/presentation/homeScreen/event_tiles.dart';
 import 'package:ticket_now/widgets/custom_text.dart';
 import 'package:ticket_now/presentation/homeScreen/filter_tab.dart';
-import 'package:ticket_now/widgets/tesrAoo.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0, // Set elevation to 0 for a flat design
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Hi, Jaadu',
-              style: TextStyle(
-                color: Color(0xff2e0505),
-                fontSize: 18.sp,
-              ),
-            ),
-            Text(
-              'Discover Amazing Events',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 20.sp,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          Container(
-            margin: EdgeInsets.only(right: 16.0),
-            height: 54.h,
-            width: 54.h,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade400,
-              borderRadius: BorderRadius.circular(14.r),
-            ),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Container(
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
           height: MediaQuery.of(context).size.height,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Hi, Jaadu',
+                        style: TextStyle(
+                          color: Color(0xff2e0505),
+                          fontSize: 18.sp,
+                        ),
+                      ),
+                      Text(
+                        'Discover Amazing Events',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    // margin: EdgeInsets.only(right: 16.0),
+                    height: 54.h,
+                    width: 54.h,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade400,
+                      borderRadius: BorderRadius.circular(14.r),
+                    ),
+                  ),
+                ],
+              ).marginSymmetric(horizontal: 16.w, vertical: 10.h),
               Container(
                 height: 50.h,
                 decoration: BoxDecoration(

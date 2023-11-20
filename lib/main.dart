@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ticket_now/presentation/homeScreen/home_page.dart';
-import 'package:ticket_now/widgets/tesrAoo.dart';
+import 'package:ticket_now/presentation/loginScreen/login_page.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       minTextAdapt: true,
       splitScreenMode: true,
-      designSize: Size(393, 852),
+      designSize: Size(360, 690),
       builder: (_, child) {
         return MaterialApp(
           theme: ThemeData(
-              scaffoldBackgroundColor: Color(0xfff4f5f9),
-              appBarTheme: AppBarTheme(backgroundColor: Color(0xfff4f5f9))),
+            scaffoldBackgroundColor: Color(0xfff4f5f9),
+          ),
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          home: LoginPage(),
         );
       },
     );

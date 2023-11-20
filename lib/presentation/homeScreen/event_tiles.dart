@@ -16,6 +16,8 @@ class EventTile extends StatelessWidget {
             return Padding(
               padding: EdgeInsets.only(right: 15.0.w, left: 15.0.w),
               child: Card(
+                color: Color(0xfff4f5f9),
+                surfaceTintColor: Color(0xfff4f5f9),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
