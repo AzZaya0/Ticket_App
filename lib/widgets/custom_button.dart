@@ -45,15 +45,16 @@ class CustomButton extends StatelessWidget {
             shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(radius ?? 14))),
             fixedSize: MaterialStatePropertyAll(Size(width, height)),
-            backgroundColor: MaterialStatePropertyAll(
-                color ?? Color.fromARGB(255, 144, 185, 255))),
+            backgroundColor:
+                MaterialStatePropertyAll(color ?? Color.fromRGBO(42, 103, 171, 1))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(text ?? '',
                 style: TextStyle(
                     fontSize: fontSize ?? 20,
-                    fontWeight: fontWeight ?? FontWeight.w600)),
+                    color: Colors.white,
+                    fontWeight: fontWeight ?? FontWeight.w700)),
             widget ??
                 SizedBox(
                   width: 0,
