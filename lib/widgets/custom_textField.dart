@@ -10,8 +10,8 @@ Widget MyTextfield(
   void Function()? onPressed,
 }) {
   return Container(
-    height: 50.spMax,
-    width: 300.spMax,
+    height: 50.h,
+    width: 300.w,
     child: TextFormField(
       obscureText: obsecureText!,
       keyboardType: keyboardType,
