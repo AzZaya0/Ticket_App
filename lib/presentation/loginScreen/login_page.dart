@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:ticket_now/bloc/screen_size_bloc.dart';
 import 'package:ticket_now/controller/screensize_controller.dart';
 import 'package:ticket_now/widgets/custom_button.dart';
 import 'package:ticket_now/widgets/custom_text.dart';
@@ -21,13 +20,9 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BlocBuilder<ScreenSizeBloc, ScreenSizeState>(
-                  builder: (context, state) {
-                if (state is MobileScreen) {
-                  return Text('screennn mobile');
-                }
-                return Text('desktoppppp');
-              }),
+
+              
+
               Obx(() => Text(controller.screenWidth.value.toString())),
               Center(
                 child: MyTextField(

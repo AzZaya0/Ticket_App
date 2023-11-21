@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:ticket_now/bloc/screen_size_bloc.dart';
+import 'package:ticket_now/bloc/internet_bloc.dart';
+import 'package:ticket_now/controller/internet_controller.dart';
 import 'package:ticket_now/presentation/loginScreen/login_page.dart';
 
 import 'controller/screensize_controller.dart';
@@ -21,9 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final ScreenSizeController controller = Get.put(ScreenSizeController());
     controller.checkScreen(MediaQuery.of(context).size.width);
-
+    final InternetController internetController = Get.put(InternetController());
+    internetController.checkInternet();
     return BlocProvider(
-      create: (context) => ScreenSizeBloc(),
+      create: (context) => InternetBloc(),
       child: ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             key: const Key('myApp'),
             theme: ThemeData(
-              scaffoldBackgroundColor: Colors.white,
+              scaffoldBackgroundColor: Color(0xfff4f5f9),
             ),
             debugShowCheckedModeBanner: false,
             home: const LoginPage(),
