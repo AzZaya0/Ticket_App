@@ -1,32 +1,45 @@
-// ignore_for_file: prefer_const_constructors
+// main.dart
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ticket_now/presentation/homeScreen/home_page.dart';
+import 'package:get/get.dart';
+import 'package:ticket_now/bloc/screen_size_bloc.dart';
 import 'package:ticket_now/presentation/loginScreen/login_page.dart';
 
+import 'controller/screensize_controller.dart';
+
 void main(List<String> args) {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      designSize: Size(393, 857),
-      builder: (_, child) {
-        return MaterialApp(
-          theme: ThemeData(
-            scaffoldBackgroundColor: Color(0xfff4f5f9),
-          ),
-          debugShowCheckedModeBanner: false,
-          home: LoginPage(),
-        );
-      },
+    final ScreenSizeController controller = Get.put(ScreenSizeController());
+    controller.checkScreen(MediaQuery.of(context).size.width);
+
+    return BlocProvider(
+      create: (context) => ScreenSizeBloc(),
+      child: ScreenUtilInit(
+        minTextAdapt: true,
+        splitScreenMode: true,
+        designSize:
+            Size(controller.screenWidth.value, controller.screenHeight.value),
+        builder: (_, child) {
+          return GetMaterialApp(
+            key: const Key('myApp'),
+            theme: ThemeData(
+              scaffoldBackgroundColor: Colors.white,
+            ),
+            debugShowCheckedModeBanner: false,
+            home: const LoginPage(),
+          );
+        },
+      ),
     );
   }
 }
