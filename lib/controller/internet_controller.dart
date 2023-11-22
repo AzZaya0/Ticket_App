@@ -6,14 +6,9 @@ import 'package:ticket_now/bloc/internet_bloc.dart';
 InternetBloc internetBloc = InternetBloc();
 
 class InternetController extends GetxController {
-  checkInternet() {
-    return BlocListener<InternetBloc, InternetState>(
-      listener: (context, state) {
-        if (state is InternetDown) {
-          const SnackBar(content: Text('hekko'));
-        } else {}
-        return null;
-      },
-    );
+  void showSnackbar() {
+    Get.showSnackbar(GetSnackBar(
+      title: 'hello',
+    ));
   }
 }

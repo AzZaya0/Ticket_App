@@ -13,6 +13,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -53,25 +55,27 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ).marginSymmetric(horizontal: 16.w, vertical: 10.h),
-              Container(
-                height: 50.h,
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.15),
-                          spreadRadius: 3.r,
-                          blurRadius: 8.r)
-                    ],
-                    borderRadius: BorderRadius.circular(12.r),
-                    color: Colors.white),
-                width: 350.w,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      prefixIcon: Icon(Icons.search),
-                      suffixIcon: Icon(Icons.menu)),
-                ),
-              ).marginSymmetric(horizontal: 20.w, vertical: 15.h),
+              Center(
+                child: Container(
+                  height: 60.h,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.15),
+                            spreadRadius: 3.r,
+                            blurRadius: 8.r)
+                      ],
+                      borderRadius: BorderRadius.circular(12.r),
+                      color: Colors.white),
+                  width: 350.w,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        prefixIcon: Icon(Icons.search),
+                        suffixIcon: Icon(Icons.menu)),
+                  ),
+                ).marginSymmetric(horizontal: 20.w, vertical: 15.h),
+              ),
               CustomText(
                       text: 'Featured Events',
                       fontSize: 20.sp,
@@ -86,7 +90,9 @@ class HomePage extends StatelessWidget {
                   .marginOnly(
                 left: 20.w,
               ),
-              FilterTab(),
+              FilterTab(
+                width: screenWidth,
+              ),
               EventTile(),
             ],
           ).marginOnly(top: 10.h),

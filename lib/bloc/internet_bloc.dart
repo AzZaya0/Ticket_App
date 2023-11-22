@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 
 part 'internet_event.dart';
@@ -13,11 +15,11 @@ class InternetBloc extends Bloc<InternetEvent, InternetState> {
   InternetBloc() : super(InternetInitial()) {
     on<InternetGainEvent>((event, emit) {
       emit(InternetAccess());
-      print('yesssssssssssss aheuahea');
     });
 
     on<InternetLossEvent>((event, emit) {
       emit(InternetDown());
+
       print('no int');
     });
 
@@ -29,6 +31,7 @@ class InternetBloc extends Bloc<InternetEvent, InternetState> {
         add(InternetLossEvent());
       }
     });
+
   }
   @override
   Future<void> close() {

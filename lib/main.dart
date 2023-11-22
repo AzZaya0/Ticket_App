@@ -1,11 +1,11 @@
-// main.dart
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:ticket_now/bloc/internet_bloc.dart';
 import 'package:ticket_now/controller/internet_controller.dart';
+import 'package:ticket_now/presentation/homeScreen/home_page.dart';
 import 'package:ticket_now/presentation/loginScreen/login_page.dart';
 
 import 'controller/screensize_controller.dart';
@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
     final ScreenSizeController controller = Get.put(ScreenSizeController());
     controller.checkScreen(MediaQuery.of(context).size.width);
     final InternetController internetController = Get.put(InternetController());
-    internetController.checkInternet();
     return BlocProvider(
       create: (context) => InternetBloc(),
       child: ScreenUtilInit(
@@ -34,11 +33,20 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return GetMaterialApp(
             key: const Key('myApp'),
+            // this is for web
+            scrollBehavior: MaterialScrollBehavior().copyWith(
+              dragDevices: {
+                PointerDeviceKind.mouse,
+                PointerDeviceKind.touch,
+                PointerDeviceKind.stylus,
+                PointerDeviceKind.unknown
+              },
+            ),
             theme: ThemeData(
               scaffoldBackgroundColor: Color(0xfff4f5f9),
             ),
             debugShowCheckedModeBanner: false,
-            home: const LoginPage(),
+            home: const HomePage(),
           );
         },
       ),
