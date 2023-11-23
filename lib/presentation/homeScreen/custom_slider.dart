@@ -13,7 +13,7 @@ class EventSlider extends StatelessWidget {
       child: ListView.builder(
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount: 5,
+          itemCount: 15,
           itemBuilder: (context, index) {
             return Container(
               height: 200.h,
