@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:ticket_now/controller/screensize_controller.dart';
+import 'package:ticket_now/presentation/homeScreen/home_page.dart';
 import 'package:ticket_now/widgets/custom_button.dart';
 import 'package:ticket_now/widgets/custom_text.dart';
 import 'package:ticket_now/widgets/custom_textField.dart';
@@ -58,7 +59,9 @@ class SignUpPage extends StatelessWidget {
               Center(
                 child: CustomButton(
                   text: 'Login',
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(HomePage());
+                  },
                   height: 50.h,
                   width: 300.h,
                   top: 50.h,
