@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:ticket_now/bloc/internet_bloc.dart';
 import 'package:ticket_now/controller/internet_controller.dart';
 import 'package:ticket_now/presentation/homeScreen/home_page.dart';
+import 'package:ticket_now/presentation/homeScreen/navigation_bar.dart';
 import 'package:ticket_now/presentation/loginScreen/login_page.dart';
 
 import 'controller/screensize_controller.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
               scaffoldBackgroundColor: Color(0xfff4f5f9),
             ),
             debugShowCheckedModeBanner: false,
-            home: const HomePage(),
+            home: const MyNavigation(),
           );
         },
       ),
