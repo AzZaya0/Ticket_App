@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:ticket_now/controller/scroll_controller.dart';
 import 'package:ticket_now/widgets/custom_text.dart';
 
 class EventTile extends StatelessWidget {
@@ -8,9 +9,12 @@ class EventTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Scroll_Controller scroll_controller = Get.put(Scroll_Controller());
     return Expanded(
       child: ListView.builder(
-          itemCount: 5,
+          controller: scroll_controller.scrollController,
+          itemCount: 10,
+
           //  physics: NeverScrollableScrollPhysics(),
           itemBuilder: (cxt, index) {
             return Padding(
